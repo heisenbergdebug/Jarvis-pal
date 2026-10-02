@@ -1,0 +1,28 @@
+# JARVIS AI Assistant - Dependencies
+# Core
+flask==3.0.0
+flask-login==0.6.3
+werkzeug==3.0.1
+flask-cors==4.0.0
+
+# AI
+google-generativeai==0.3.2
+
+# Voice (speech recognition + text-to-speech)
+SpeechRecognition==3.10.0
+pyttsx3==2.90
+pyaudio==0.2.13
+
+# Web search
+duckduckgo-search==4.4.3
+requests==2.31.0
+beautifulsoup4==4.12.2
+
+# File handling
+PyPDF2==3.0.1
+python-docx==1.1.0
+Pillow==10.2.0
+
+# Utilities
+python-dotenv==1.0.0
+rich==13.7.0

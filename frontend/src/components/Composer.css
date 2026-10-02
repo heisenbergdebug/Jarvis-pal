@@ -1,0 +1,69 @@
+.chips { display: flex; gap: 8px; padding: 0 6px; }
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 34px;
+  padding: 0 14px 0 11px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--label-2);
+  background: rgba(255, 255, 255, 0.09);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.13);
+  transition: background 0.25s var(--ease), color 0.25s var(--ease),
+              box-shadow 0.25s var(--ease), transform 0.25s var(--spring);
+}
+.chip:hover { color: var(--label); background: rgba(255, 255, 255, 0.14); }
+.chip:active { transform: scale(0.95); }
+.chip[aria-pressed='true'] {
+  color: #fff;
+  background: rgba(10, 132, 255, 0.82);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 4px 16px rgba(10, 132, 255, 0.42);
+}
+
+.composer {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  padding: 6px;
+  border-radius: 27px;
+  transition: box-shadow 0.25s var(--ease);
+}
+.composer:focus-within {
+  box-shadow: var(--glass-shadow), 0 0 0 3px rgba(10, 132, 255, 0.4);
+}
+.composer textarea {
+  flex: 1;
+  min-width: 0;
+  max-height: 176px;
+  padding: 9px 4px;
+  background: none;
+  border: 0;
+  outline: 0;                 /* focus shows on the whole capsule */
+  resize: none;
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--label);
+}
+.composer textarea::placeholder { color: var(--label-3); }
+
+.mic.is-listening {
+  background: var(--red);
+  animation: listen 1.4s ease-in-out infinite;
+}
+@keyframes listen {
+  0%   { box-shadow: 0 0 0 0 rgba(255, 69, 58, 0.55); }
+  100% { box-shadow: 0 0 0 12px rgba(255, 69, 58, 0); }
+}
+
+.send {
+  background: linear-gradient(180deg, #4aa8ff, #0a84ff);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 4px 14px rgba(10, 132, 255, 0.45);
+  animation: send-in 0.35s var(--spring);
+}
+.send:hover { background: linear-gradient(180deg, #5eb2ff, #1a8cff); }
+.send:disabled { opacity: 0.5; cursor: default; }
+@keyframes send-in { from { opacity: 0; transform: scale(0.4); } }

@@ -1,0 +1,10 @@
+# Secrets and personal data - never commit these
+.env
+data/users.json
+data/conversations/
+uploads/*
+!uploads/.gitkeep
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store

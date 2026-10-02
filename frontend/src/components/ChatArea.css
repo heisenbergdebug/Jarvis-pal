@@ -1,0 +1,44 @@
+/* The thread scrolls UNDER the glass top bar and composer, so the blur
+   has real content to refract - that's what sells the iOS effect. */
+.messages {
+  position: absolute;
+  inset: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 92px 20px calc(var(--dock, 130px) + 22px);
+}
+.thread {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.thread-stamp {
+  align-self: center;
+  margin-bottom: 8px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--label-3);
+}
+.thread-stamp + .msg { margin-top: 6px; }
+
+.dock {
+  position: absolute;
+  z-index: 5;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: min(800px, 100%);
+  margin: 0 auto;
+  padding: 0 20px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media (max-width: 700px) {
+  .messages { padding-left: 14px; padding-right: 14px; }
+  .msg { max-width: 88%; }
+  .dock { padding: 0 8px 8px; width: 100%; }
+}
