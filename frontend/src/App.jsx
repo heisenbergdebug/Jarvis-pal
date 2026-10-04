@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 import Wallpaper from './components/Wallpaper.jsx'
 import Orb from './components/Orb.jsx'
 import LockScreen from './components/LockScreen.jsx'
@@ -35,6 +36,8 @@ export default function App() {
           onLogout={() => setAuth({ state: 'out', username: '' })}
         />
       )}
+
+      <Analytics />
     </>
   )
 }
